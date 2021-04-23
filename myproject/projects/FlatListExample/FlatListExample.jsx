@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native'
 
-const App = () => {
+const FlatListExample = () => {
   const [cats, setCats] = useState([
     { name: 'kis cica', id: '1' },
     { name: 'nagy cica', id: '2' },
@@ -31,7 +31,7 @@ const App = () => {
   )
 }
 
-export default App
+export default FlatListExample
 
 const styles = StyleSheet.create({
   container: {
