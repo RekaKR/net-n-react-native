@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View, ScrollView } from 'react-native'
 
-const App = () => {
+const ListsScrollViewExample = () => {
   const [cats, setCats] = useState([
     { name: 'kis cica', key: '1' },
     { name: 'nagy cica', key: '2' },
@@ -21,7 +21,7 @@ const App = () => {
   )
 }
 
-export default App
+export default ListsScrollViewExample
 
 const styles = StyleSheet.create({
   container: {
