@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View, FlatList, Alert } from 'react-native'
 import uuid from 'react-native-uuid'
-import Header from './components/Header/Header'
 import TodoItem from './components/TodoItem/TodoItem'
 import AddTodo from './components/AddTodo/AddTodo'
 
@@ -28,8 +27,6 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      <Header />
-
       <View style={styles.content}>
         <AddTodo submitHandler={submitHandler} />
 
@@ -37,7 +34,6 @@ const App = () => {
           <FlatList data={todos}
             renderItem={({ item }) => <TodoItem item={item} pressHandler={pressHandler} />} />
         </View>
-
       </View>
     </View>
   )
