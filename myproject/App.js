@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View, FlatList } from 'react-native'
+import uuid from 'react-native-uuid'
 import Header from './components/Header/Header'
 import TodoItem from './components/TodoItem/TodoItem'
+import AddTodo from './components/AddTodo/AddTodo'
 
 const App = () => {
   const [todos, setTodos] = useState([
@@ -14,11 +16,16 @@ const App = () => {
     setTodos(prevTodos => prevTodos.filter(todo => todo.key !== key))
   }
 
+  const submitHandler = text => {
+    setTodos(prevTodos => [{ text, key: uuid.v4() }, ...prevTodos])
+  }
+
   return (
     <View style={styles.container}>
       <Header />
 
       <View style={styles.content}>
+        <AddTodo submitHandler={submitHandler} />
 
         <View style={styles.list}>
           <FlatList data={todos}
