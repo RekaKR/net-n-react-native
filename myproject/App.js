@@ -4,6 +4,7 @@ import uuid from 'react-native-uuid'
 import Header from './components/Header/Header'
 import TodoItem from './components/TodoItem/TodoItem'
 import AddTodo from './components/AddTodo/AddTodo'
+import Sandbox from './components/Sandbox/Sandbox'
 
 const App = () => {
   const [todos, setTodos] = useState([
