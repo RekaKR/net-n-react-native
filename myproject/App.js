@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, View, FlatList, Alert } from 'react-native'
+import { StyleSheet, Text, View, FlatList, Alert, TouchableWithoutFeedback, Keyboard } from 'react-native'
 import uuid from 'react-native-uuid'
 import Header from './components/Header/Header'
 import TodoItem from './components/TodoItem/TodoItem'
@@ -27,19 +27,21 @@ const App = () => {
   }
 
   return (
-    <View style={styles.container}>
-      <Header />
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+      <View style={styles.container}>
+        <Header />
 
-      <View style={styles.content}>
-        <AddTodo submitHandler={submitHandler} />
+        <View style={styles.content}>
+          <AddTodo submitHandler={submitHandler} />
 
-        <View style={styles.list}>
-          <FlatList data={todos}
-            renderItem={({ item }) => <TodoItem item={item} pressHandler={pressHandler} />} />
+          <View style={styles.list}>
+            <FlatList data={todos}
+              renderItem={({ item }) => <TodoItem item={item} pressHandler={pressHandler} />} />
+          </View>
+
         </View>
-
       </View>
-    </View>
+    </TouchableWithoutFeedback>
   )
 }
 
