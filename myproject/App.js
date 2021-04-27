@@ -4,7 +4,6 @@ import uuid from 'react-native-uuid'
 import Header from './components/Header/Header'
 import TodoItem from './components/TodoItem/TodoItem'
 import AddTodo from './components/AddTodo/AddTodo'
-import Sandbox from './components/Sandbox/Sandbox'
 
 const App = () => {
   const [todos, setTodos] = useState([
@@ -62,3 +61,7 @@ const styles = StyleSheet.create({
     flex: 1
   }
 })
+
+//for icons
+//npm i react-native-vector-icons
+//react-native link react-native-vector-icons

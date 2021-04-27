@@ -1,10 +1,12 @@
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
+import Icon from 'react-native-vector-icons/dist/FontAwesome'
 
 const TodoItem = ({ item, pressHandler }) => {
   return (
     <TouchableOpacity onPress={() => pressHandler(item.key)}>
       <Text style={styles.item}>{item.text}</Text>
+      <Icon name="remove" size={20} color="firebrick" />
     </TouchableOpacity>
   )
 }
